@@ -1,0 +1,170 @@
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #007BFF;
+  }
+
+  button {
+    margin: 5px;
+    font-size: 15px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .game-container {
+    text-align: center;
+    margin-top: 50px;
+    height: 100vh;
+    padding: 20px;
+  }
+
+  .grid-wrapper {
+    max-width: 1000px; 
+    margin: 30px;
+    overflow: auto;
+    padding-bottom: 0px;
+    position: relative;
+  }
+
+  .grid-container {
+    display: grid;
+    gap: 1px;
+    background-color: #333;
+    margin: 20px;
+  }
+
+  .grid-container.grid-9x9 {
+    grid-template-columns: repeat(9, 30px);
+  }
+  
+  .grid-container.grid-16x16 {
+    grid-template-columns: repeat(16, 30px);
+  }
+  
+  .grid-container.grid-30x30 {
+    grid-template-columns: repeat(30, 30px);
+  }
+ 
+  .cell {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #aaa;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .cell.uncovered[data-count="0"] {
+    background-color: #ccc;
+  }
+  
+  .cell.uncovered[data-count="1"] {
+    background-color: #ccc;
+    color: blue; 
+  }
+  
+  .cell.uncovered[data-count="2"] {
+    background-color: #ccc;
+    color: green; 
+  }
+  
+  .cell.uncovered[data-count="3"] {
+    background-color: #ccc;
+    color: red; 
+  }
+  
+  .cell.uncovered[data-count="4"] {
+    background-color: #ccc;
+    color: darkblue; 
+  }
+  
+  .cell.uncovered[data-count="5"] {
+    background-color: #ccc;
+    color: darkred; 
+  }
+  
+  .cell.uncovered[data-count="6"] {
+    background-color: #ccc;
+    color: rgb(1, 78, 78); 
+  }
+  
+  .cell.uncovered[data-count="7"] {
+    background-color: #ccc;
+    color: rgb(0, 39, 0); 
+  }
+  
+  .cell.uncovered[data-count="8"] {
+    background-color: #ccc;
+    color: black; 
+  }
+
+  .cell.flagged::before {
+    content: "🚩"; 
+    font-size: 20px;
+  }
+
+  .cell.unclickedMine::before {
+    content: "💣";
+    font-size: 20px;
+  }
+
+  .cell.clickedMine::before {
+    content: "💣";
+    font-size: 20px;
+    background-color: red;
+  }
+
+  .message-container {
+    display: none;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    z-index: 9999;
+  }
+
+  .game-lost-message-text{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(167, 2, 2);
+  }
+
+  .game-won-message-text{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(1, 134, 1);
+  }
+
+  .flags-over-message-text{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(182, 120, 6);
+  }
